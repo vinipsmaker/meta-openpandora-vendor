@@ -36,7 +36,7 @@ automount() {
 	! test -d "/media/$name" && mkdir -p "/media/$name"
 	
 	
-	if ! $MOUNT -t auto -o dirsync,noatime,umask=0 $DEVNAME "/media/$name" && ! $MOUNT -t auto -o dirsync,noatime $DEVNAME "/media/$name"
+	if ! $MOUNT -t auto -o dirsync,noatime,utf8,umask=0 $DEVNAME "/media/$name" && ! $MOUNT -t auto -o dirsync,noatime,utf8 $DEVNAME "/media/$name" && ! $MOUNT -t auto -o dirsync,noatime,umask=0 && ! $MOUNT -t auto -o dirsync,noatime
 	then
 		#logger "mount.sh/automount" "$MOUNT -t auto $DEVNAME \"/media/$name\" failed!"
 		rm_dir "/media/$name"
